@@ -13,6 +13,9 @@
      
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
       <link rel="stylesheet"href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+      <title>
+        Events
+      </title>
     
      
     </head>
@@ -161,13 +164,13 @@
     <span style="display:flex;flex-direction:row;"><i class="fa fa-tachometer" aria-hidden="true" style="color:white;"></i><a href="studentdashboard.html">Dashboard</a></span>
     
       <span style="display:flex;flex-direction:row;"><i class="fa fa-tasks" aria-hidden="true"></i><a href="events.html">Upcoming events </a></span>
-      <button class="dropdown-btn"><i class="fa fa-folder" aria-hidden="true"></i>Documents 
+      <button class="dropdown-btn" onclick="toggle1()"><i class="fa fa-folder" aria-hidden="true"></i>Documents 
       <i class="fa fa-chevron-down" aria-hidden="true"></i>
       </button>
       <div class="dropdown-container">
       <span style="display:flex;flex-direction:row;"><i class="fa fa-folder" aria-hidden="true"></i><a href="documents.html">View documents</a></span>
       </div>
-      <button class="dropdown-btn"><i class="fa fa-id-card" aria-hidden="true"></i>Exam Info 
+      <button class="dropdown-btn" onclick="toggle2()"><i class="fa fa-id-card" aria-hidden="true"></i>Exam Info 
       <i class="fa fa-chevron-down" aria-hidden="true"></i>
       </button>
       <div class="dropdown-container">
@@ -270,7 +273,7 @@
     <hr style="margin-top:60px;"></hr>
     <div class="container my-5" >
     
-    <div class="table-responsive "style="margin-left:100px;background:#f0efef;padding:20px;">
+    <div class="table-responsive "style="margin-left:180px;background:#f0efef;padding:20px;width:90%">
     <table class="table table-hover  my-3" id="myTable"style="background:white;border:0;padding:10px;">
       <thead class="table-light">
       <tr>
@@ -404,6 +407,40 @@
          <script type='text/javascript' src='jspdf.min.js'></script>
          <script type='text/javascript' src='html2canvas.js'></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script>
+      var rot1=0;
+      function toggle1(){
+        let elm = document.getElementById('arrow1');
+        rot1+=180;
+        
+        elm.style.transform = 'rotate('+rot1+'deg)';
+        if(rot1%360==0)
+        {
+          elm.style.paddingRight = '35px';
+          elm.style.paddingLeft = '0';
+        }
+        else{
+          elm.style.paddingRight = '0';
+          elm.style.paddingLeft = '35px';
+        }
+      }
+      var rot2=0;
+      function toggle2(){
+        let elm = document.getElementById('arrow2');
+        rot2+=180;
+        
+        elm.style.transform = 'rotate('+rot2+'deg)';
+        if(rot2%360==0)
+        {
+          elm.style.paddingRight = '35px';
+          elm.style.paddingLeft = '0';
+        }
+        else{
+          elm.style.paddingRight = '0';
+          elm.style.paddingLeft = '35px';
+        }
+      }
+    </script>
      
     
     <!-- <script>

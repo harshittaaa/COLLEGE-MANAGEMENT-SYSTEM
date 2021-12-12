@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient Card</title>
+    <title>Student Dashboard</title>
 
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -196,10 +196,10 @@ background-color:yellow;
 font-family: 'Anton', sans-serif;
 font-family: 'Oswald', sans-serif;
   font-size: 75px;
-  color:#33425B;
-  text-align:center;
+  color:#dc3545;
+  /* text-align:center; */
   font-weight: 700;
-  text-align:center;
+  margin-left: 250px;
   line-height: 1em;
   text-transform: uppercase;
 }
@@ -211,13 +211,13 @@ font-family: 'Oswald', sans-serif;
 <span style="display:flex;flex-direction:row;"><i class="fa fa-tachometer" aria-hidden="true" style="color:white;"></i><a href="studentdashboard.html">Dashboard</a></span>
 
   <span style="display:flex;flex-direction:row;"><i class="fa fa-tasks" aria-hidden="true"></i><a href="events.html">Upcoming Events </a></span>
-  <button class="dropdown-btn"><i class="fa fa-folder" aria-hidden="true"></i>Documents 
-  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  <button class="dropdown-btn" onclick="toggle1()"><i class="fa fa-folder" aria-hidden="true"></i>Documents 
+  <i class="fa fa-chevron-down"  aria-hidden="true"></i>
   </button>
   <div class="dropdown-container">
   <span style="display:flex;flex-direction:row;"><i class="fa fa-folder" aria-hidden="true"></i><a href="documents.html">View documents</a></span>
   </div>
-  <button class="dropdown-btn"><i class="fa fa-id-card" aria-hidden="true"></i>Exam Info 
+  <button class="dropdown-btn" onclick="toggle2()"><i class="fa fa-id-card" aria-hidden="true"></i>Exam Info 
   <i class="fa fa-chevron-down" aria-hidden="true"></i>
   </button>
   <div class="dropdown-container">
@@ -234,8 +234,8 @@ font-family: 'Oswald', sans-serif;
 <!-- <p style="font-family: 'Amatic SC', cursive;
 font-family: 'Anton', sans-serif;
 font-family: 'Oswald', sans-serif;text-align:center;color:black;font-size:75px;">News Bulletin</p> -->
-<h2 id="headss">News<span class="normal-fonts theme_color"> Bulletin </span></h2> 
-  <div class="container justify-content-center align-items-center" style="margin-top:130px; margin-left:300px;">
+<h2 id="headss">Welcome to<span class="normal-fonts theme_color"> Student Panel! </span></h2> 
+  <div class="container justify-content-center align-items-center" style="margin-top:130px; margin-left:220px;">
   
   
 	<div class="row mx-5" id="cardsrow">
@@ -309,6 +309,42 @@ font-family: 'Oswald', sans-serif;text-align:center;color:black;font-size:35px;"
 
 </div>
 </div>
+
+<script>
+  var rot1=0;
+  function toggle1(){
+    let elm = document.getElementById('arrow1');
+    rot1+=180;
+    
+    elm.style.transform = 'rotate('+rot1+'deg)';
+    if(rot1%360==0)
+    {
+      elm.style.paddingRight = '35px';
+      elm.style.paddingLeft = '0';
+    }
+    else{
+      elm.style.paddingRight = '0';
+      elm.style.paddingLeft = '35px';
+    }
+  }
+  var rot2=0;
+  function toggle2(){
+    let elm = document.getElementById('arrow2');
+    rot2+=180;
+    
+    elm.style.transform = 'rotate('+rot2+'deg)';
+    if(rot2%360==0)
+    {
+      elm.style.paddingRight = '35px';
+      elm.style.paddingLeft = '0';
+    }
+    else{
+      elm.style.paddingRight = '0';
+      elm.style.paddingLeft = '35px';
+    }
+  }
+</script>
+
 <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -326,6 +362,7 @@ for (i = 0; i < dropdown.length; i++) {
   }
   });
 }
+
 </script>
 
 </body>
